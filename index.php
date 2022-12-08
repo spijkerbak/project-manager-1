@@ -1,9 +1,11 @@
 <?php
 $title = 'Task Manager 1.2';
 
-// show errors in browser during development
 session_start();
-ini_set('display_errors', -1);
+
+// show errors in browser during development
+ini_set('display_ errors', 'on');
+error_reporting(E_ALL);
 
 // force refresh in browser during development
 header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1
