@@ -36,7 +36,7 @@ class ProjectDAO extends DAO {
         $this->execute($sql, $args);
     }
 
-    function insert(Project $project) {
+    private function insert(Project $project) {
         $sql = 'INSERT INTO `TM1_Project` '
                 . ' (title, description, owner)'
                 . ' VALUES (?, ?, ?)';
@@ -48,7 +48,7 @@ class ProjectDAO extends DAO {
         $this->execute($sql, $args);
     }
 
-    function update(Project $project) {
+    private function update(Project $project) {
         $sql = 'UPDATE `TM1_Project` '
                 . ' SET title = ?, description = ?, owner = ? '
                 . ' WHERE projectId = ?';
