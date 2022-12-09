@@ -1,7 +1,7 @@
 <?php
 // show errors in browser during development
 error_reporting(E_ALL);
-ini_set('display_errors','On');
+ini_set('display_errors', 'On');
 
 $title = 'Task Manager 1.2';
 
@@ -15,7 +15,7 @@ header("Expires: 0"); // Proxies
 // set include path to work from any directory level
 set_include_path('./' . PATH_SEPARATOR . '../');
 
-// requested controller should be in known controllers
+// requested controller (if any) should be in known controllers white list
 $controller = filter_input(INPUT_GET, 'controller');
 $controllers = [
     'TaskController',
@@ -23,11 +23,12 @@ $controllers = [
     'ResetController',
 ];
 if (in_array($controller, $controllers)) {
+    // include the controller and skip the html
     require("controller/$controller.php");
     exit;
 }
 
-// requested view should be in allowed
+// requested view should be in allowed views white list
 $view = filter_input(INPUT_GET, 'view');
 $views = [
     // allowed views
