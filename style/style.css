@@ -24,8 +24,7 @@ nav {
     margin-bottom: 10px;
 }
 
-nav a,
-nav button {
+nav a, nav button {
     display: inline-block;
     text-decoration: none;
     margin: 0 12px 0 0;
