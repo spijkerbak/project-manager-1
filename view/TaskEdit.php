@@ -5,14 +5,21 @@ require_once 'view/ProjectSelector.php';
 
 class TaskEdit extends View {
 
-    function show() {
+    function show() { // handle get request from browser
+
+        // get parameters from URL
         $action = filter_input(INPUT_GET, 'action');
         $projectId = filter_input(INPUT_GET, 'projectId');
         $taskNumber = filter_input(INPUT_GET, 'taskNumber');
+        
+        // create a DAO object
         $taskDAO = new TaskDAO;
+
+        // get a model object from DAO
         $task = $taskDAO->get($projectId, $taskNumber);
 
-        $ps = new ProjectSelector($projectId);
+        // generate the form
+        $ps = new ProjectSelector();
         $projectId = $ps->getProjectId();
 
         if (empty($projectId)) {
