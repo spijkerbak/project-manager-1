@@ -6,26 +6,26 @@
 h1 {
     font-size: 18pt;
 }
+
 h2 {
     font-size: 16pt;
 }
+
 h3 {
     font-size: 14pt;
-}
-header {
 }
 
 header h1 {
     color: blue;
 }
 
-
-
 nav {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-nav a, nav button{
+
+nav a,
+nav button {
     display: inline-block;
     text-decoration: none;
     margin: 0 12px 0 0;
@@ -36,21 +36,25 @@ nav a, nav button{
     /*min-width: 80px;*/
     /*padding: 4px 8px 4px 8px;*/
 }
+
 nav button {
     border: 0;
     background-color: white;
     padding: 0;
 }
-main {
-}
 
-table, th, td {
+table,
+th,
+td {
     border: 1px solid blue;
     border-collapse: collapse;
 }
-td, th {
-   padding: 3px; 
+
+td,
+th {
+    padding: 3px;
 }
+
 th {
     text-align: left;
 }
@@ -58,15 +62,18 @@ th {
 form {
     margin-bottom: 20px;
 }
+
 form label {
     display: block;
     margin-bottom: 12px;
 }
+
 form label input {
     display: block;
     background-color: white;
     width: 400px;
 }
+
 form label textarea {
     display: block;
     background-color: white;
@@ -74,13 +81,11 @@ form label textarea {
     width: 400px;
 }
 
-footer  {
-
-}
 footer p {
     font-size: smaller;
     color: lightblue;
 }
+
 footer a {
     color: lightblue;
 }
@@ -88,7 +93,7 @@ footer a {
 .number {
     text-align: right;
 }
- 
+
 select {
     width: 500px;
 }
