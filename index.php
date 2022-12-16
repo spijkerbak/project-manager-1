@@ -10,7 +10,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
 // basic setup
-$title = 'Task Manager 1.3';
+$title = 'Task Manager 1.31';
 session_start();
 set_include_path('./' . PATH_SEPARATOR . '../'); // include from any level
 
@@ -47,6 +47,7 @@ if (empty($view)) {
         'TaskList',
         'TaskEdit',
         'ProjectEdit',
+        'Docs',
     ];
     if (!in_array($view, $known_views)) {
         $view = 'Error';
@@ -58,6 +59,7 @@ $menu = [
     'Home' => 'Home',
     'Projects' => 'ProjectList',
     'Tasks' => 'TaskList',
+    'Docs' => 'Docs',
 ];
 ?>
 <!doctype html>
@@ -68,7 +70,7 @@ $menu = [
         <?= $title ?>
     </title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" type="text/css" href="style/style.css?as">
 </head>
 
 <body>

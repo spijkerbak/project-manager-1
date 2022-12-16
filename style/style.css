@@ -24,22 +24,22 @@ nav {
     margin-bottom: 10px;
 }
 
-nav a, nav button {
+nav a,
+nav button {
     display: inline-block;
     text-decoration: none;
     margin: 0 12px 0 0;
     color: blue;
-    /*border: 1px solid blue;*/
-    /*background-color: #DDF;*/
-    /*text-align: center;*/
-    /*min-width: 80px;*/
-    /*padding: 4px 8px 4px 8px;*/
 }
 
 nav button {
     border: 0;
     background-color: white;
     padding: 0;
+}
+
+main nav a {
+    color: red;
 }
 
 table,
