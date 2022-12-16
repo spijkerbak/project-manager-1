@@ -1,50 +1,60 @@
 <?php
+/**
+ * All requests are sent to this index.php
+ * Depending on requested view or controller, 
+ * the needed class will be included (require)
+ */
+
 // show errors in browser during development
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
-$title = 'Task Manager 1.2';
-
+// basic setup
+$title = 'Task Manager 1.3';
 session_start();
+set_include_path('./' . PATH_SEPARATOR . '../'); // include from any level
 
 // force refresh in browser during development
 header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1
 header("Pragma: no-cache"); // HTTP 1.0
 header("Expires: 0"); // Proxies
 
-// set include path to work from any directory level
-set_include_path('./' . PATH_SEPARATOR . '../');
-
-// requested controller (if any) should be in known controllers white list
+// requested controller (if any) should be in white list
 $controller = filter_input(INPUT_GET, 'controller');
-$controllers = [
-    'TaskController',
-    'ProjectController',
-    'ResetController',
-];
-if (in_array($controller, $controllers)) {
-    // include the controller and skip the html
-    require("controller/$controller.php");
+if (!empty($controller)) {
+    $known_controllers = [
+        'TaskController',
+        'ProjectController',
+        'ResetController',
+    ];
+    if (in_array($controller, $known_controllers)) {
+        // include the controller and skip the html
+        require("controller/$controller.php");
+        exit;
+    }
+    header('location: ?view=Error'); // redirect!
     exit;
 }
 
-// requested view should be in allowed views white list
+// requested view should be in white list, default = Home
 $view = filter_input(INPUT_GET, 'view');
-$views = [
-    // allowed views
-    'Home',
-    'ProjectList',
-    'TaskList',
-    'TaskEdit',
-    'ProjectEdit',
-];
-if (!in_array($view, $views)) {
-    header('location: ?view=Home');
+if (empty($view)) {
+    $view = 'Home';
+} else {
+    $known_views = [
+        'Home',
+        'ProjectList',
+        'TaskList',
+        'TaskEdit',
+        'ProjectEdit',
+    ];
+    if (!in_array($view, $known_views)) {
+        $view = 'Error';
+    }
 }
-
 // views available in menu
 $menu = [
-    // item => view
+    // menu item => view
     'Home' => 'Home',
     'Projects' => 'ProjectList',
     'Tasks' => 'TaskList',
