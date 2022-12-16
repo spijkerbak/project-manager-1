@@ -3,3 +3,4 @@ secret.php
 sftp.json
 \~*.*
 *.bkp
+*.dtmp
