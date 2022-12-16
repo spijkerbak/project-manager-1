@@ -2,46 +2,60 @@
 
 require_once 'framework/Model.php';
 
-class Task extends Model {
-    
+class Task extends Model
+{
+
     protected $projectId = null;
     protected $taskNumber = null;
     protected $title = '';
     protected $description = '';
     protected $worker = '';
     protected $status = 'to do';
-    
+
     protected $project = '';
-    
-    function __construct(?array $data = null) {
+
+    /**
+     * create new Task from form or database
+     * see Model constructor for explanation
+     * @param array|null $data
+     */
+    function __construct(?array $data = null)
+    {
         parent::__construct($data);
     }
-    
-    function getTaskNumber() {
+
+    function getTaskNumber()
+    {
         return $this->taskNumber;
     }
 
-    function getProjectId() {
+    function getProjectId()
+    {
         return $this->projectId;
     }
 
-    function getProject() {
+    function getProject()
+    {
         return $this->project;
     }
 
-    function getTitle() {
+    function getTitle()
+    {
         return $this->title;
     }
 
-    function getDescription() {
+    function getDescription()
+    {
         return $this->description;
     }
 
-    function getWorker() {
+    function getWorker()
+    {
         return $this->worker;
     }
 
-    function getStatus() {
+    function getStatus()
+    {
         return $this->status;
     }
 

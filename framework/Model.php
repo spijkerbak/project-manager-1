@@ -1,17 +1,20 @@
 <?php
 
-class Model {
+class Model
+{
 
-    /* constructor is used in thee ways:
-     * 1. empty, when called with new..()
-     * 2. called from fetchObject, 
+    /* constructor can be used in thee ways:
+     * 1. create empty object, when called with new..()
+     * 2. create from database record by PDO::fetchObject called from DAO 
      *      which copies fields from database record BEFORE construction!
-     * 3. explicit with new..($_POST) to copy fields from posted form
+     * 3. create from assosciative array like new..($_POST) 
+     *      to copy fields from posted form
      */
-    function __construct(?array $form) {
+    function __construct(?array $form)
+    {
         if (!empty($form)) {
-            foreach ($_POST as $key => $value) {
-                if(property_exists($this, $key)) {
+            foreach ($form as $key => $value) {
+                if (property_exists($this, $key)) {
                     $this->$key = $value;
                 }
             }

@@ -2,30 +2,41 @@
 
 require_once 'framework/Model.php';
 
-class Project extends Model {
+class Project extends Model
+{
 
     protected $projectId = null;
     protected $title = '';
     protected $description = '';
     protected $owner = '';
 
-    function __construct(?array $data = null) {
+    /**
+     * create new Project from form or database
+     * see Model constructor for explanation
+     * @param array|null $data
+     */
+    function __construct(?array $data = null)
+    {
         parent::__construct($data);
     }
 
-    function getProjectId() {
+    function getProjectId()
+    {
         return $this->projectId;
     }
 
-    function getTitle() {
+    function getTitle()
+    {
         return $this->title;
     }
 
-    function getDescription() {
+    function getDescription()
+    {
         return $this->description;
     }
 
-    function getOwner() {
+    function getOwner()
+    {
         return $this->owner;
     }
 
