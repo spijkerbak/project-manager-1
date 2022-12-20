@@ -10,7 +10,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
 // basic setup
-$title = 'Task Manager 1.31';
+$title = 'Project Manager 1.32';
 session_start();
 set_include_path('./' . PATH_SEPARATOR . '../'); // include from any level
 
