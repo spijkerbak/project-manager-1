@@ -15,7 +15,7 @@
     "allow": [],
     "ignore": [
         "\\.vscode",
-        "\\.git",
+        "\\.git"
     ],
     "generatedFiles": {
         "extensionsToInclude": [],

@@ -10,7 +10,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
 // basic setup
-$title = 'Project Manager 1.32';
+$title = 'Project Manager 1.34';
 session_start();
 set_include_path('./' . PATH_SEPARATOR . '../'); // include from any level
 
@@ -95,7 +95,7 @@ $menu = [
         ?>
     </main>
     <footer>
-        <p>&copy; Frans Spijkerman 2020-2022 - Sources staan op <a target="github"
+        <p>&copy; Frans Spijkerman 2020-2023 - Sources staan op <a target="github"
                 href="https://github.com/spijkerbak/project-manager-1">Github</a></p>
     </footer>
 </body>
