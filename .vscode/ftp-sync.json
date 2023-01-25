@@ -1,8 +1,8 @@
 {
     "remotePath": "/httpdocs/project-manager-1",
     "host": "spijkerman.nl",
-    "username": "spijkerman",
-    "password": "Spijkerman-Spijkerman",
+    "username": "***************",
+    "password": "**************",
     "port": 21,
     "secure": true,
     "protocol": "ftp",
