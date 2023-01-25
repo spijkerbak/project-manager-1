@@ -1,6 +1,7 @@
-/nbproject/
-secret.php
-sftp.json
+secret.*
+/.git
+/.vscode
 \~*.*
+*.bak
 *.bkp
 *.dtmp
