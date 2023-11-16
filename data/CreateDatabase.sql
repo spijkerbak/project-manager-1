@@ -31,7 +31,7 @@ CREATE TABLE `TM1_Task` (
   `worker` varchar(40) DEFAULT NULL,
   `status` varchar(20) DEFAULT NULL,
   CONSTRAINT PRIMARY KEY (`projectId`, `taskNumber`),
-  CONSTRAINT FOREIGN KEY (`projectId`) REFERENCES `TM1_Project` (`projectId`)
+  CONSTRAINT FOREIGN KEY (`projectId`) REFERENCES `TM1_Project` (`projectId`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `TM1_Task` (`taskNumber`, `projectId`, `title`, `description`, `worker`, `status`) VALUES

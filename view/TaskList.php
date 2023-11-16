@@ -45,7 +45,7 @@ class TaskList extends View {
                 $task = $taskDAO->getNext();
                 ?>
                 <tr>
-                    <td><a href="?view=TaskEdit&projectId=<?= $task->getProjectId() ?>&taskNumber=<?= $task->getTaskNumber() ?>">edit</a></td>
+                    <td><a href="?view=TaskEdit&action=update&projectId=<?= $task->getProjectId() ?>&taskNumber=<?= $task->getTaskNumber() ?>">edit</a></td>
                     <td><a onclick="return confirm('Zeker weten?')" 
                            href="?controller=TaskController&action=delete&projectId=<?= $task->getProjectId() ?>&taskNumber=<?= $task->getTaskNumber() ?>">delete</a></td>
                         <?php if (!$projectSelected) { ?>
