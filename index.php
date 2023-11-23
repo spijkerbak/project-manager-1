@@ -10,7 +10,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
 // basic setup
-$title = 'Project Manager 1.42';
+$title = 'Project Manager 1.43';
 session_start();
 set_include_path('./' . PATH_SEPARATOR . '../'); // include from any level
 
