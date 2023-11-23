@@ -10,6 +10,13 @@ START TRANSACTION;
 
 DROP TABLE IF EXISTS `TM1_Task`;
 DROP TABLE IF EXISTS `TM1_Project`;
+DROP TABLE IF EXISTS `TM1_User`;
+
+CREATE TABLE `TM1_User` (
+  `userName` varchar(40) DEFAULT NULL,
+  `passWord` varchar(40) DEFAULT 'geheim',
+  `role` varchar(10) DEFAULT 'worker'
+)
 
 CREATE TABLE `TM1_Project` (
   `projectId` int(11) PRIMARY KEY AUTO_INCREMENT,
