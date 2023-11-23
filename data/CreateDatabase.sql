@@ -16,7 +16,7 @@ CREATE TABLE `TM1_User` (
   `userName` varchar(40) DEFAULT NULL,
   `passWord` varchar(40) DEFAULT 'geheim',
   `role` varchar(10) DEFAULT 'worker'
-)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `TM1_Project` (
   `projectId` int(11) PRIMARY KEY AUTO_INCREMENT,
