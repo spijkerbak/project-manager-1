@@ -43,10 +43,13 @@ if (empty($view)) {
 } else {
     $known_views = [
         'Home',
+        'Login',
         'ProjectList',
+        'ProjectEdit',
         'TaskList',
         'TaskEdit',
-        'ProjectEdit',
+        'UserList',
+        'UserEdit',
         'Reset',
         'Docs',
     ];
@@ -58,8 +61,10 @@ if (empty($view)) {
 $menu = [
     // menu item => view
     'Home' => 'Home',
+    'Login' => 'Login',
     'Projects' => 'ProjectList',
     'Tasks' => 'TaskList',
+    'Users' => 'UserList',
     'Docs' => 'Docs',
     'Reset' => 'Reset',
 ];
