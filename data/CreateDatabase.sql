@@ -18,6 +18,9 @@ CREATE TABLE `TM1_User` (
   `role` varchar(10) DEFAULT 'worker'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+INSERT INTO `TM1_User` (`userName`, `passWord`, `role`) VALUES 
+('Henk', 'henk-is-gek', 'manager');
+
 CREATE TABLE `TM1_Project` (
   `projectId` int(11) PRIMARY KEY AUTO_INCREMENT,
   `title` varchar(40) DEFAULT NULL,
