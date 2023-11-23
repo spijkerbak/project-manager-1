@@ -10,7 +10,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
 // basic setup
-$title = 'Project Manager 1.41';
+$title = 'Project Manager 1.42';
 session_start();
 set_include_path('./' . PATH_SEPARATOR . '../'); // include from any level
 
@@ -60,7 +60,6 @@ $menu = [
     'Projects' => 'ProjectList',
     'Tasks' => 'TaskList',
     'Docs' => 'Docs',
-    'Reset!' => 'Reset',
 ];
 ?>
 <!doctype html>
@@ -86,6 +85,9 @@ $menu = [
             <?= $menu_item ?>
         </a>
         <?php } ?>
+        <a href="?controller=ResetController"
+            onclick="return confirm('Alle gegevens wissen en vervangen door defaults?')">
+            Reset</a>
     </nav>
     <main>
         <?php
