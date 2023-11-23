@@ -12,15 +12,6 @@ DROP TABLE IF EXISTS `TM1_Task`;
 DROP TABLE IF EXISTS `TM1_Project`;
 DROP TABLE IF EXISTS `TM1_User`;
 
-CREATE TABLE `TM1_User` (
-  `userName` varchar(40) DEFAULT NULL,
-  `passWord` varchar(40) DEFAULT 'geheim',
-  `role` varchar(10) DEFAULT 'worker'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-INSERT INTO `TM1_User` (`userName`, `passWord`, `role`) VALUES 
-('Henk', 'henk-is-gek', 'manager');
-
 CREATE TABLE `TM1_Project` (
   `projectId` int(11) PRIMARY KEY AUTO_INCREMENT,
   `title` varchar(40) DEFAULT NULL,
