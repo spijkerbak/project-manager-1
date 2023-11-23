@@ -9,7 +9,7 @@ class Project extends Model
     protected $title = '';
     protected $description = '';
     protected $owner = '';
-
+    protected $status = '';
     /**
      * create new Project from form or database
      * see Model constructor for explanation
@@ -40,4 +40,8 @@ class Project extends Model
         return $this->owner;
     }
 
+    function getStatus()
+    {
+        return $this->status;
+    }
 }

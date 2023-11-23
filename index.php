@@ -47,6 +47,7 @@ if (empty($view)) {
         'TaskList',
         'TaskEdit',
         'ProjectEdit',
+        'Reset',
         'Docs',
     ];
     if (!in_array($view, $known_views)) {
@@ -60,6 +61,7 @@ $menu = [
     'Projects' => 'ProjectList',
     'Tasks' => 'TaskList',
     'Docs' => 'Docs',
+    'Reset' => 'Reset',
 ];
 ?>
 <!doctype html>
@@ -81,13 +83,10 @@ $menu = [
     </header>
     <nav>
         <?php foreach ($menu as $menu_item => $menu_view) { ?>
-        <a href="?view=<?= $menu_view ?>">
-            <?= $menu_item ?>
-        </a>
+            <a href="?view=<?= $menu_view ?>">
+                <?= $menu_item ?>
+            </a>
         <?php } ?>
-        <a href="?controller=ResetController"
-            onclick="return confirm('Alle gegevens wissen en vervangen door defaults?')">
-            Reset</a>
     </nav>
     <main>
         <?php
