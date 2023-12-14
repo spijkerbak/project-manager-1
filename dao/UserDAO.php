@@ -1,5 +1,9 @@
 <?php
 
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+
 require_once 'framework/DAO.php';
 require_once 'model/User.php';
 
@@ -51,11 +55,12 @@ class UserDAO extends DAO
     private function insert(User $user)
     {
         $sql = 'INSERT INTO `TM1_User` '
-            . ' (username, passWord)'
-            . ' VALUES (?, ?)';
+            . ' (`username`, `password`, `role`)'
+            . ' VALUES (?, ?, ?)';
         $args = [
             $user->getUsername(),
             $user->getPassword(),
+            $user->getRole(),
         ];
         $this->execute($sql, $args);
     }
@@ -63,11 +68,11 @@ class UserDAO extends DAO
     private function update(User $user)
     {
         $sql = 'UPDATE `TM1_User` '
-            . ' SET username = ?, password = ? '
-            . ' WHERE username = ?';
+            . ' SET `password` = ?, `role` = ? '
+            . ' WHERE `username` = ?';
         $args = [
-            $user->getUsername(),
             $user->getPassword(),
+            $user->getRole(),
             $user->getUsername(),
         ];
         $this->execute($sql, $args);
@@ -75,7 +80,7 @@ class UserDAO extends DAO
 
     function save(User $user)
     {
-        if (empty($user->getUsername())) {
+        if (!empty($user->getUsername())) {
             $this->insert($user);
         } else {
             $this->update($user);

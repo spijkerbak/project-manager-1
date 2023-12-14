@@ -6,7 +6,7 @@ require_once 'model/Task.php';
 class TaskDAO extends DAO {
 
     private static $select = "SELECT"
-            . " `TM1_Task`.*, `TM1_Project`.`title` AS `project`"
+            . " `TM1_Task`.*, `TM1_Project`.`title` AS `projectTitle`"
             . " FROM `TM1_Task`"
             . " LEFT JOIN `TM1_Project`"
             . " ON `TM1_Task`.`projectId` = `TM1_Project`.`projectId`";

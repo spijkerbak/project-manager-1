@@ -3,9 +3,6 @@ require_once 'framework/View.php';
 require_once 'model/Task.php';
 require_once 'dao/TaskDAO.php';
 require_once 'ProjectSelector.php';
-?>
-
-<?php
 
 class TaskList extends View
 {
@@ -54,7 +51,7 @@ class TaskList extends View
                             href="?controller=TaskController&action=delete&projectId=<?= $task->getProjectId() ?>&taskNumber=<?= $task->getTaskNumber() ?>">delete</a>
                     </td>
                     <?php if (!$projectSelected) { ?>
-                        <td>HA!
+                        <td>
                             <?= $task->getProject() ?>
                         </td>
                     <?php } ?>
