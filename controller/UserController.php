@@ -12,6 +12,7 @@ class UserController extends Controller {
             case 'login':
                 $user = new User($_POST);
                 $userDAO->login($user);
+                return 'view=Home';
                 break;
             case 'save':
                 $user = new User($_POST);

@@ -26,6 +26,7 @@ if (!empty($controller)) {
         'TaskController',
         'ProjectController',
         'ResetController',
+        'UserController',
     ];
     if (in_array($controller, $known_controllers)) {
         // include the controller and skip the html

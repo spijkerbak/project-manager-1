@@ -7,7 +7,7 @@ class Login extends View {
     function show() {
         ?>
         <h2>Login</h2>
-        <form id="login" method="post" action="?controller=LoginController&action=login">
+        <form id="login" method="post" action="?controller=UserController&action=login">
             <label>Username<input type="text" name="username"></label>   
             <label>Password<input type="password" name="password"></label>   
         </form>
