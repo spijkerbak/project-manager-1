@@ -7,9 +7,11 @@ require_once 'ProjectSelector.php';
 
 <?php
 
-class TaskList extends View {
+class TaskList extends View
+{
 
-    function show() {
+    function show()
+    {
         $taskDAO = new TaskDAO;
 
         $ps = new ProjectSelector();
@@ -45,16 +47,29 @@ class TaskList extends View {
                 $task = $taskDAO->getNext();
                 ?>
                 <tr>
-                    <td><a href="?view=TaskEdit&action=update&projectId=<?= $task->getProjectId() ?>&taskNumber=<?= $task->getTaskNumber() ?>">edit</a></td>
-                    <td><a onclick="return confirm('Zeker weten?')" 
-                           href="?controller=TaskController&action=delete&projectId=<?= $task->getProjectId() ?>&taskNumber=<?= $task->getTaskNumber() ?>">delete</a></td>
-                        <?php if (!$projectSelected) { ?>
-                        <td><?= $task->getProject() ?></td>
+                    <td><a
+                            href="?view=TaskEdit&action=update&projectId=<?= $task->getProjectId() ?>&taskNumber=<?= $task->getTaskNumber() ?>">edit</a>
+                    </td>
+                    <td><a onclick="return confirm('Zeker weten?')"
+                            href="?controller=TaskController&action=delete&projectId=<?= $task->getProjectId() ?>&taskNumber=<?= $task->getTaskNumber() ?>">delete</a>
+                    </td>
+                    <?php if (!$projectSelected) { ?>
+                        <td>HA!
+                            <?= $task->getProject() ?>
+                        </td>
                     <?php } ?>
-                    <td><?= $task->getTaskNumber() ?></td>
-                    <td><?= $task->getTitle() ?></td>
-                    <td><?= $task->getWorker() ?></td>
-                    <td><?= $task->getStatus() ?></td>
+                    <td>
+                        <?= $task->getTaskNumber() ?>
+                    </td>
+                    <td>
+                        <?= $task->getTitle() ?>
+                    </td>
+                    <td>
+                        <?= $task->getWorker() ?>
+                    </td>
+                    <td>
+                        <?= $task->getStatus() ?>
+                    </td>
                 </tr>
                 <?php
             }

@@ -19,16 +19,10 @@ header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1
 header("Pragma: no-cache"); // HTTP 1.0
 header("Expires: 0"); // Proxies
 
-// requested controller (if any) should be in white list
+// requested controller ?
 $controller = filter_input(INPUT_GET, 'controller');
 if (!empty($controller)) {
-    $known_controllers = [
-        'TaskController',
-        'ProjectController',
-        'ResetController',
-        'UserController',
-    ];
-    if (in_array($controller, $known_controllers)) {
+    if (file_exists("controller/$controller.php")) {
         // include the controller and skip the html
         require("controller/$controller.php");
         exit;
@@ -37,28 +31,12 @@ if (!empty($controller)) {
     exit;
 }
 
-// requested view should be in white list, default = Home
-$view = filter_input(INPUT_GET, 'view');
-if (empty($view)) {
-    $view = 'Home';
-} else {
-    $known_views = [
-        'Home',
-        'Login',
-        'ProjectList',
-        'ProjectEdit',
-        'TaskList',
-        'TaskEdit',
-        'UserList',
-        'UserEdit',
-        'Reset',
-        'Docs',
-    ];
-    if (!in_array($view, $known_views)) {
-        $view = 'Error';
-    }
+// requested view or nothing
+$view = filter_input(INPUT_GET, 'view') ?? 'Home';
+if (!file_exists("view/{$view}.php")) {
+    $view = 'Error';
 }
-// views available in menu
+
 $menu = [
     // menu item => view
     'Home' => 'Home',

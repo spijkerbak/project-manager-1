@@ -28,7 +28,7 @@ class ProjectSelector extends View {
         <form method="post">
             <label>Project :
                 <select name="projectId" onchange="submit()">
-                    <option value=""></option>
+                    <option value="">&lt;alle></option>
                     <?php
                     while ($projectDAO->hasNext()) {
                         $project = $projectDAO->getNext();
