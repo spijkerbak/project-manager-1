@@ -12,8 +12,6 @@ class Task extends Model
     protected $worker = '';
     protected $status = 'to do';
 
-    protected $project = '';
-
     /**
      * create new Task from form or database
      * see Model constructor for explanation
