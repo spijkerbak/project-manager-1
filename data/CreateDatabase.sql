@@ -30,7 +30,7 @@ CREATE TABLE `TM1_Project` (
 
 INSERT INTO `TM1_Project` (`projectId`, `title`, `description`, `owner`) VALUES
 (1, 'Maria\'s kamer opknappen', 'Na deze opknapbeurt zal Maria\'s kamer er weer piekfijn uitzien', 'Maria'),
-(3, 'Computer opnieuw installeren', 'Van Windows 8.1 naar Windows 10', 'Maria'),
+(3, 'Computer opnieuw installeren', 'Van Windows 10 naar Windows 11', 'Maria'),
 (4, 'Huis schoonmaken', 'Van boven tot onder', 'Frans');
 
 CREATE TABLE `TM1_Task` (
